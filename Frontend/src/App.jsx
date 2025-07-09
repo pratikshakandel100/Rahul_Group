@@ -7,6 +7,7 @@ import UserRegisterPage from './pages/userregister'
 import AdminLoginPage from './pages/loginAdmin'
 import DeveloperLoginPage from './pages/loginDeveloper'
 import DeveloperRegisterPage from './pages/registerDevoper'
+import ForgotPasswordPage from './pages/forgetpasswordpage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
     <AdminLoginPage/>
     <DeveloperLoginPage/>
     <DeveloperRegisterPage/>
+    <ForgotPasswordPage/>
       
     </>
   )
