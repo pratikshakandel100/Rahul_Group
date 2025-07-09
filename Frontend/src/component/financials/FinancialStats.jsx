@@ -1,16 +1,15 @@
 import React from 'react';
-import { DollarSign, TrendingUp, CreditCard, Wallet } from 'lucide-react';
+import { DollarSign, TrendingUp, Wallet } from 'lucide-react';
 
 const FinancialStats = () => {
   const financialStats = {
     totalRevenue: 125750,
     monthlyRevenue: 18450,
-    totalExpenses: 45300,
     netProfit: 80450
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 border border-gray-200">
         <div className="flex items-center justify-between">
           <div>
@@ -39,22 +38,6 @@ const FinancialStats = () => {
           </div>
           <div className="p-2 sm:p-3 bg-[#d97757] bg-opacity-20 rounded-full">
             <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-[#d97757]" />
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 border border-gray-200">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm font-medium text-gray-600">Total Expenses</p>
-            <p className="text-xl sm:text-2xl font-bold text-gray-900">${financialStats.totalExpenses.toLocaleString()}</p>
-            <p className="text-sm text-red-600 flex items-center mt-1">
-              <TrendingUp className="w-4 h-4 mr-1" />
-              +3.2% from last month
-            </p>
-          </div>
-          <div className="p-2 sm:p-3 bg-red-100 rounded-full">
-            <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
           </div>
         </div>
       </div>

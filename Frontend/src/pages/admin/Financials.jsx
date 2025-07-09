@@ -10,8 +10,8 @@ const FinancialsPage = () => {
     <div className="space-y-6">
       <FinancialHeader />
       <FinancialStats />
-      <FinancialCharts />
-      <AdditionalStats />
+      {/* <FinancialCharts /> */}
+      {/* <AdditionalStats /> */}
       <TransactionTable />
     </div>
   );

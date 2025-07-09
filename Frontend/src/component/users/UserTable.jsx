@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, Edit, Trash2, Star } from 'lucide-react';
+import { Eye, Edit, Trash2 } from 'lucide-react';
 import UserModal from './UserModal';
 
 const UserTable = () => {
@@ -13,11 +13,8 @@ const UserTable = () => {
       email: 'john.doe@example.com',
       phone: '+1 (555) 123-4567',
       role: 'Developer',
-      status: 'Active',
-      joinDate: '2024-01-15',
       location: 'New York, NY',
       projects: 12,
-      rating: 4.8,
       avatar: null
     },
     {
@@ -26,11 +23,8 @@ const UserTable = () => {
       email: 'sarah.smith@example.com',
       phone: '+1 (555) 987-6543',
       role: 'Designer',
-      status: 'Active',
-      joinDate: '2024-01-10',
       location: 'Los Angeles, CA',
       projects: 8,
-      rating: 4.9,
       avatar: null
     },
     {
@@ -39,11 +33,8 @@ const UserTable = () => {
       email: 'mike.johnson@example.com',
       phone: '+1 (555) 456-7890',
       role: 'Client',
-      status: 'Inactive',
-      joinDate: '2024-01-20',
       location: 'Chicago, IL',
       projects: 3,
-      rating: 4.2,
       avatar: null
     },
     {
@@ -52,11 +43,8 @@ const UserTable = () => {
       email: 'emily.davis@example.com',
       phone: '+1 (555) 321-0987',
       role: 'Developer',
-      status: 'Active',
-      joinDate: '2024-01-05',
       location: 'Austin, TX',
       projects: 15,
-      rating: 4.7,
       avatar: null
     },
     {
@@ -65,11 +53,8 @@ const UserTable = () => {
       email: 'robert.wilson@example.com',
       phone: '+1 (555) 654-3210',
       role: 'Manager',
-      status: 'Active',
-      joinDate: '2024-01-01',
       location: 'Seattle, WA',
       projects: 25,
-      rating: 4.6,
       avatar: null
     }
   ];
@@ -82,10 +67,6 @@ const UserTable = () => {
       case 'Manager': return 'bg-[#d97757] bg-opacity-20 text-[#d97757]';
       default: return 'bg-gray-100 text-gray-800';
     }
-  };
-
-  const getStatusColor = (status) => {
-    return status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
   };
 
   const handleViewUser = (user) => {
@@ -106,17 +87,8 @@ const UserTable = () => {
                 <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Role
                 </th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Status
-                </th>
                 <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">
                   Projects
-                </th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
-                  Rating
-                </th>
-                <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">
-                  Join Date
                 </th>
                 <th className="px-4 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Actions
@@ -144,22 +116,8 @@ const UserTable = () => {
                       {user.role}
                     </span>
                   </td>
-                  <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(user.status)}`}>
-                      {user.status}
-                    </span>
-                  </td>
                   <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900 hidden sm:table-cell">
                     {user.projects}
-                  </td>
-                  <td className="px-4 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="ml-1 text-sm text-gray-900">{user.rating}</span>
-                    </div>
-                  </td>
-                  <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900 hidden lg:table-cell">
-                    {user.joinDate}
                   </td>
                   <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <div className="flex items-center space-x-2">

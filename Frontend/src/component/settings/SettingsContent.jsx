@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  Save, 
-  Eye, 
-  EyeOff, 
-  Shield, 
-  Bell, 
-  Mail, 
-  Smartphone, 
-  Monitor 
-} from 'lucide-react';
+import { Save } from 'lucide-react';
 
 const SettingsContent = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -83,36 +74,6 @@ const SettingsContent = () => {
             <Save className="w-4 h-4" />
             <span>Save Changes</span>
           </button>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 border border-gray-200">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Company Information</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-            <input
-              type="text"
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d97757] focus:border-transparent"
-              defaultValue="DevHire Inc."
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Website</label>
-            <input
-              type="url"
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d97757] focus:border-transparent"
-              defaultValue="https://devhire.com"
-            />
-          </div>
-          <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Address</label>
-            <input
-              type="text"
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d97757] focus:border-transparent"
-              defaultValue="123 Tech Street, Silicon Valley, CA 94000"
-            />
-          </div>
         </div>
       </div>
     </div>
