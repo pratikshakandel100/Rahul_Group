@@ -1,28 +1,50 @@
-import { AdminHeader } from "../../AdminHeader";
-import Sidebar from "../Sidebar";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import AdminHeader from "../../AdminHeader"        // Your header component
+import {AdminSidebar} from "../../component/Sidebar";       // Your sidebar component
 
-export const AdminLayout = () => {
+
+const developerData = {
+  name: "admin",
+  title: "Admin",
+  email: "admin@example.com",
+  phone: "123-456-7890",
+  location: "Remote",
+  hourlyRate: 50,
+  availability: "Available",
+  bio: "Experienced developer specializing in modern web applications.",
+  skills: ["React", "Node.js", "MongoDB"]
+};
+
+const AdminLayout = () => {
+  // Sidebar state for mobile
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-gray-50">
   
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
-        <AdminHeader />
-      </header>
 
-      {/* Content below Header */}
-      <div className="flex flex-1 pt-[64px]"> 
-        
-        {/* Fixed Sidebar */}
-        <aside className="w-64 fixed top-[64px] bottom-0 left-0 bg-white border-r z-40">
-          <Sidebar />
-        </aside>
+      <AdminHeader setIsSidebarOpen={setIsSidebarOpen} developer={developerData} />
 
-        {/* Main content area */}
-        <main className="ml-64 w-full p-6 overflow-y-auto">
+
+
+      <div className="flex pt-16"> {/* pt-16 for header height */}
+        {/* Sidebar */}
+        <AdminSidebar
+          isOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
+          // activeTab={activeTab}
+          // setActiveTab={setActiveTab}
+        />
+
+        {/* Main Content */}
+        <main className="flex-1 min-h-[calc(100vh-4rem)] p-4 sm:p-6 lg:ml-64 transition-all">
           <Outlet />
         </main>
       </div>
     </div>
   );
 };
+
+export default AdminLayout;
