@@ -6,14 +6,17 @@ import RecentProjects from '../../component/Dashboard/RecentProjects';
 
 const DashboardPage = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-4 sm:p-6 lg:p-8">
+      {/* Stats Grid */}
       <StatsGrid />
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      {/* Revenue & Activity Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <RevenueChart />
         <RecentActivity />
       </div>
-      
+
+      {/* Recent Projects */}
       <RecentProjects />
     </div>
   );

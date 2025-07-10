@@ -1,12 +1,18 @@
 import React from "react";
 import { FiMenu, FiBell, FiUser, FiLogOut } from "react-icons/fi";
 
-export const AdminHeader = () => {
+const AdminHeader = ({ setIsSidebarOpen, developer }) => {
   return (
-    <header className=" bg-white shadow-sm border-b border-gray-200 px-4 py-3 z-40">
+    <header className="fixed top-0 left-0 right-0 bg-white shadow-sm border-b border-gray-200 px-4 py-3 z-40">
       <div className="flex items-center justify-between">
         {/* Left side */}
         <div className="flex items-center">
+          <button
+            onClick={() => setIsSidebarOpen(true)}
+            className="lg:hidden p-2 rounded-md hover:bg-gray-100 mr-2"
+          >
+            <FiMenu size={20} />
+          </button>
           <h1 className="text-xl font-semibold text-gray-800">
             Developer Dashboard
           </h1>
@@ -26,10 +32,10 @@ export const AdminHeader = () => {
           <div className="flex items-center space-x-3">
             <div className="hidden sm:block text-right">
               <p className="text-sm font-medium text-gray-800">
-               "John Doe"
+                {developer?.name || "John Doe"}
               </p>
               <p className="text-xs text-gray-500">
-                 "Full Stack Developer"
+                {developer?.title || "Full Stack Developer"}
               </p>
             </div>
             <div className="relative">
@@ -51,3 +57,4 @@ export const AdminHeader = () => {
   );
 };
 
+export default AdminHeader;

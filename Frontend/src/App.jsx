@@ -3,13 +3,14 @@
 import { useState } from 'react'
 
 import './index.css'
+
 import AdminDashbaord from './pages/admin/Dashboard'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import FinancialsPage from './pages/admin/Financials'
 import ProjectManagementPage from './pages/admin/Projectmanagement'
 import UserManagementPage from './pages/admin/UserManagement'
 import SettingsPage from './pages/admin/SettingsPage'
-import { AdminLayout } from './component/layout/AdminLayout'
+import  AdminLayout  from './component/layout/AdminLayout'
 import { Navigate } from "react-router-dom";
 
 // users
@@ -53,7 +54,6 @@ function App() {
   return (
       <BrowserRouter>
         <Routes>
-
 
           <Route path='/admin' element={<AdminLayout />} >
             <Route index element={<Navigate to="dashboard" replace />} />

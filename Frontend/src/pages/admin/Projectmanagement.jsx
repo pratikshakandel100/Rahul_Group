@@ -80,7 +80,7 @@ const JobList = () => {
         <div className="text-left mb-6">
           <h1 className="text-2xl font-bold text-gray-800">Job Listings</h1>
         </div>
-        
+
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="p-4 sm:p-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
@@ -90,7 +90,7 @@ const JobList = () => {
               </button>
             </div>
           </div>
-          
+
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-50">
@@ -128,10 +128,6 @@ const JobList = () => {
                           alt={job.title}
                           className="w-12 h-12 object-cover rounded-lg border border-gray-200"
                         />
-                        <div className="ml-4">
-                          <div className="text-sm font-semibold text-gray-900">{job.title}</div>
-                          <div className="text-sm text-gray-500">Job Position</div>
-                        </div>
                       </div>
                     </td>
                     <td className="px-4 sm:px-6 py-6 whitespace-nowrap">
@@ -164,7 +160,7 @@ const JobList = () => {
                       </div>
                     </td>
                     <td className="px-4 sm:px-6 py-6 whitespace-nowrap text-sm font-medium">
-                      <button 
+                      <button
                         onClick={() => handleDelete(job.id)}
                         className="flex items-center gap-2 px-4 py-2 bg-[#d97757] text-white rounded-lg hover:bg-[#c86645] transition-all duration-300 font-medium shadow-md hover:shadow-lg"
                       >
