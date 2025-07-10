@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar";
-import Header from "./Header";
+import Header from "../../components/Header";
 import DeveloperJobRequests from "./JobRequests";
 import DeveloperReviews from "./Reviews";
 import DeveloperProfile from "./Profile";
 import DeveloperPayments from "./Payments";
 import DeveloperJobs from "./Jobs";
 import DeveloperNotifications from "./Notifications";
-import {
-  TrendingUp,
-  DollarSign,
-  Star,
-  Briefcase,
-} from "lucide-react";
+import { TrendingUp, DollarSign, Star, Briefcase } from "lucide-react";
 
 const DashboardOverview = () => {
   const stats = [
@@ -106,69 +101,4 @@ const DashboardOverview = () => {
   );
 };
 
-const DeveloperDashboard = () => {
-  const [activeTab, setActiveTab] = useState("dashboard");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const developer = {
-    name: "John Doe",
-    title: "Full Stack Developer",
-    email: "john.doe@example.com",
-    phone: "+1 (555) 123-4567",
-    location: "New York, NY",
-    skills: ["React", "Node.js", "Python", "MongoDB"],
-    hourlyRate: 75,
-    availability: "Available",
-  };
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "dashboard":
-        return <DashboardOverview />;
-      case "job-requests":
-        return <DeveloperJobRequests />;
-      case "my-jobs":
-        return <DeveloperJobs />;
-      case "reviews":
-        return <DeveloperReviews />;
-      case "profile":
-        return <DeveloperProfile developer={developer} />;
-      case "payments":
-        return <DeveloperPayments />;
-      case "notifications":
-        return <DeveloperNotifications />;
-      default:
-        return <DashboardOverview />;
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Fixed Header */}
-      <Header 
-        setIsSidebarOpen={setIsSidebarOpen} 
-        developer={developer}
-      />
-
-      {/* Sidebar */}
-      <Sidebar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        isOpen={isSidebarOpen}
-        setIsOpen={setIsSidebarOpen}
-      />
-
-      {/* Main Content Area */}
-      <main className={`
-        pt-16 transition-all duration-300 min-h-screen
-        ${isSidebarOpen ? 'lg:ml-64' : 'lg:ml-64'}
-      `}>
-        <div className="bg-gray-50">
-          {renderContent()}
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default DeveloperDashboard;
+export default DashboardOverview;
