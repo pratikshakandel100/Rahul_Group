@@ -42,7 +42,7 @@ function Sidebar() {
     <div className="h-screen bg-gray-50">
       {/* Sidebar */}
       <div className={` h-full  w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:static lg:inset-0`}>
-        <div className="flex items-center justify-between p-4 border-b">
+        <div className="flex items-center justify-between p-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-[#d97757] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">D</span>

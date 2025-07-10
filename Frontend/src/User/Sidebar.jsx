@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import { 
   Home, 
   Users, 
@@ -11,7 +11,20 @@ import {
   X
 } from 'lucide-react';
 
-const Sidebar = ({ activeTab, setActiveTab, closeSidebar, isMobile }) => {
+import {useNavigate} from "react-router-dom"
+
+const Sidebar = () => 
+  {
+
+      const [activeTab, setActiveTab] = useState("dashboard");
+      const [sidebarOpen, setSidebarOpen] = useState(false);
+      const [isMobile, setIsMobile] = useState(false);
+
+       const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
+    const router = useNavigate()
   const menuItems = [
     { id: 'dashboard', name: 'Dashboard', icon: Home },
     { id: 'hire-developer', name: 'Hire Developer', icon: Users },
@@ -24,15 +37,16 @@ const Sidebar = ({ activeTab, setActiveTab, closeSidebar, isMobile }) => {
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
+    router(`/user/${tabId}`)
     if (isMobile) {
       closeSidebar();
     }
   };
 
   return (
-    <div className="h-[calc(100vh-64px)] flex flex-col bg-white shadow-lg border-r border-gray-200">
+    <div className="h-[calc(100vh-64px)] flex flex-col bg-white">
       {/* Sidebar Header */}
-      <div className="p-4 border-b border-gray-200 flex items-center justify-between flex-shrink-0">
+      <div className="p-4 flex items-center justify-between flex-shrink-0">
         <div>
           <h2 className="text-lg font-bold text-gray-800">Navigation</h2>
           <p className="text-xs text-gray-600">Choose a section</p>
