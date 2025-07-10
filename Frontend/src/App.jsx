@@ -1,43 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { BrowserRouter as Router , Routes, Route } from 'react-router-dom';
+
+import Homepage from './pages/Homepage.jsx';
+import UserLoginPage from './pages/Auth/LoginPages/UserLoginPage.jsx';
+import UserRegisterPage from './pages/Auth/RegisterPages/UserRegisterPage.jsx';
+import AdminLoginPage from './pages/Auth/LoginPages/AdminLoginPage.jsx';
+import DeveloperLoginPage from './pages/Auth/LoginPages/DeveloperLoginPage.jsx';
+import DeveloperRegisterPage from './pages/Auth/RegisterPages/DeveloperRegisterPage.jsx';
+import ForgotPasswordPage from './pages/Auth/ForgotPasswordPage.jsx';
+
+
+
+
 import './index.css'
-import Sidebar from './component/Sidebar'
-import AdminDashbaord from './pages/admin/Dashboard'
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import FinancialsPage from './pages/admin/Financials'
-import ProjectManagementPage from './pages/admin/Projectmanagement'
-import UserManagementPage from './pages/admin/UserManagement'
-import SettingsPage from './pages/admin/SettingsPage'
-import { AdminLayout } from './component/layout/AdminLayout'
-import { Navigate } from "react-router-dom";
 
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <BrowserRouter>
+
+
+export default function App(){
+    return(<>
+
+    <Router>
         <Routes>
+            
+            <Route path='/' element={<Homepage/>}></Route>
+            <Route path='/register/' element={<UserRegisterPage/>}></Route>
+            <Route path='/login' element={<UserLoginPage/>}></Route>
+            <Route path='/adminlogin' element={<AdminLoginPage/>}></Route>
+            <Route path='/developerlogin' element={<DeveloperLoginPage/>}></Route>
+            <Route path='/userregister' element={<UserRegisterPage/>}></Route>
+            <Route path='/developerregister' element={<DeveloperRegisterPage/>}></Route>
+            <Route path='/forgotpassword' element={<ForgotPasswordPage/>}></Route>
 
 
-          <Route path='/admin' element={<AdminLayout />} >
-            <Route index element={<Navigate to="dashboard" replace />} />
-            <Route path='dashboard' element={<AdminDashbaord />} />
-            <Route path='financials' element={<FinancialsPage />} />
-            <Route path='project' element={<ProjectManagementPage />} />
-            <Route path='users' element={<UserManagementPage />} />
-            <Route path='setting' element={<SettingsPage />} />
-          </Route>
+            <Route path='/forgotpassword' element={<ForgotPasswordPage/>}></Route>
 
 
         </Routes>
 
-      </BrowserRouter>
-
+    </Router>
     </>
-  )
+    );
 }
-
-export default App
