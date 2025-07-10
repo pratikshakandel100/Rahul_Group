@@ -1,29 +1,45 @@
-import UserHeader from "../users/UserHeader";
-import Sidebar from "../../User/Sidebar";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { User } from "lucide-react";
+import { UserSlider } from "../../component/UserSlider"; // Your sidebar component
+import UserHeader from "../UserHeader";
 
-export const UserLayout = () => {
+const userData = {
+  name: "user",
+  title: "user",
+  email: "user@example.com",
+  phone: "123-456-7890",
+  location: "Remote",
+  hourlyRate: 50,
+  availability: "Available",
+  bio: "Experienced developer specializing in modern web applications.",
+  skills: ["React", "Node.js", "MongoDB"],
+};
+
+const UserLayout = () => {
+  // Sidebar state for mobile
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <div className="min-h-screen flex flex-col">
-  
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
-        <UserHeader />
-      </header>
+    <div className="min-h-screen bg-gray-50">
+      <UserHeader setIsSidebarOpen={setIsSidebarOpen} developer={userData} />
 
-      {/* Content below Header */}
-      <div className="flex flex-1 pt-[64px]"> 
-        
-        {/* Fixed Sidebar */}
-        <aside className="w-64 fixed top-[64px] bottom-0 left-0 bg-white border-r z-40">
-          <Sidebar />
-        </aside>
-
-        {/* Main content area */}
-        <main className="ml-64 w-full p-6 overflow-y-auto">
+      <div className="flex pt-16">
+        {" "}
+        {/* pt-16 for header height */}
+        {/* Sidebar */}
+        <UserSlider
+          isOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
+          // activeTab={activeTab}
+          // setActiveTab={setActiveTab}
+        />
+        {/* Main Content */}
+        <main className="flex-1 min-h-[calc(100vh-4rem)] p-4 sm:p-6 lg:ml-64 transition-all">
           <Outlet />
         </main>
       </div>
     </div>
   );
 };
+
+export default UserLayout;
