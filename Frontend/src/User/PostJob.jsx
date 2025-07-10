@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PlusIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Plus, X } from 'lucide-react';
 
 const PostJob = () => {
   const [formData, setFormData] = useState({
@@ -65,7 +65,7 @@ const PostJob = () => {
   };
 
   return (
-    <div className= "  p-6 max-w-7xl mx-auto">
+    <div className="p-6 max-w-7xl mx-auto">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900">Post a New Job</h2>
         <p className="text-gray-600 mt-2">Fill out the details below to post your job and find the perfect developer.</p>
@@ -230,7 +230,7 @@ const PostJob = () => {
                 onClick={addSkill}
                 className="px-4 py-2 bg-[#d97757] text-white rounded-lg hover:bg-orange-600 transition-colors"
               >
-                <PlusIcon className="w-4 h-4" />
+                <Plus className="w-4 h-4" />
               </button>
             </div>
             
@@ -246,7 +246,7 @@ const PostJob = () => {
                     onClick={() => removeSkill(skill)}
                     className="ml-2 text-gray-500 hover:text-red-500"
                   >
-                    <XMarkIcon className="w-4 h-4" />
+                    <X className="w-4 h-4" />
                   </button>
                 </span>
               ))}

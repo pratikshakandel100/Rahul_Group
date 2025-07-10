@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { StarIcon, MapPinIcon, ClockIcon, CurrencyDollarIcon } from '@heroicons/react/24/solid';
-import { HeartIcon, ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
+import { Star, MapPin, Clock, DollarSign, Heart, MessageCircle } from 'lucide-react';
 
 const HireDeveloper = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -151,29 +150,29 @@ const HireDeveloper = () => {
                 </div>
               </div>
               <button className="text-gray-400 hover:text-red-500 transition-colors">
-                <HeartIcon className="w-5 h-5" />
+                <Heart className="w-5 h-5" />
               </button>
             </div>
 
             <div className="flex items-center mb-3">
               <div className="flex items-center">
-                <StarIcon className="w-4 h-4 text-yellow-400" />
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
                 <span className="ml-1 text-sm font-medium">{developer.rating}</span>
                 <span className="ml-1 text-sm text-gray-500">({developer.reviews} reviews)</span>
               </div>
               <div className="ml-auto flex items-center text-sm text-gray-600">
-                <MapPinIcon className="w-4 h-4 mr-1" />
+                <MapPin className="w-4 h-4 mr-1" />
                 {developer.location}
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
               <div className="flex items-center">
-                <CurrencyDollarIcon className="w-4 h-4 text-green-500 mr-1" />
+                <DollarSign className="w-4 h-4 text-green-500 mr-1" />
                 <span>${developer.hourlyRate}/hr</span>
               </div>
               <div className="flex items-center">
-                <ClockIcon className="w-4 h-4 text-blue-500 mr-1" />
+                <Clock className="w-4 h-4 text-blue-500 mr-1" />
                 <span className={`${developer.availability === 'Available' ? 'text-green-600' : 'text-red-600'}`}>
                   {developer.availability}
                 </span>
@@ -200,7 +199,7 @@ const HireDeveloper = () => {
                 Hire Now
               </button>
               <button className="flex items-center justify-center px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                <ChatBubbleLeftIcon className="w-4 h-4 text-gray-600" />
+                <MessageCircle className="w-4 h-4 text-gray-600" />
               </button>
             </div>
           </div>

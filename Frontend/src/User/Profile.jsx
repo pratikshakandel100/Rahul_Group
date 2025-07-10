@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CameraIcon, PencilIcon, CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Camera, Edit, Check, X } from 'lucide-react';
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -48,7 +48,7 @@ const Profile = () => {
   ];
 
   return (
-    <div className="p-6 max-w-7 xl mx-auto">
+    <div className="p-6 max-w-7xl mx-auto">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900">Profile Settings</h2>
         <p className="text-gray-600 mt-2">Manage your account information and preferences.</p>
@@ -63,7 +63,7 @@ const Profile = () => {
                 {profileData.name.split(' ').map(n => n[0]).join('')}
               </div>
               <button className="absolute bottom-0 right-0 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50">
-                <CameraIcon className="w-4 h-4 text-gray-600" />
+                <Camera className="w-4 h-4 text-gray-600" />
               </button>
             </div>
             
@@ -81,7 +81,7 @@ const Profile = () => {
                       onClick={handleEdit}
                       className="flex items-center px-4 py-2 bg-[#d97757] text-white rounded-lg hover:bg-orange-600 transition-colors"
                     >
-                      <PencilIcon className="w-4 h-4 mr-2" />
+                      <Edit className="w-4 h-4 mr-2" />
                       Edit Profile
                     </button>
                   ) : (
@@ -90,14 +90,14 @@ const Profile = () => {
                         onClick={handleSave}
                         className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                       >
-                        <CheckIcon className="w-4 h-4 mr-2" />
+                        <Check className="w-4 h-4 mr-2" />
                         Save
                       </button>
                       <button
                         onClick={handleCancel}
                         className="flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
                       >
-                        <XMarkIcon className="w-4 h-4 mr-2" />
+                        <X className="w-4 h-4 mr-2" />
                         Cancel
                       </button>
                     </div>

@@ -1,36 +1,36 @@
 import React from "react";
 import {
-  UserGroupIcon,
-  BriefcaseIcon,
-  CheckCircleIcon,
-  ClockIcon,
-  CurrencyDollarIcon,
-} from "@heroicons/react/24/outline";
+  Users,
+  Briefcase,
+  CheckCircle,
+  Clock,
+  DollarSign,
+} from "lucide-react";
 
 const Dashboard = () => {
   const stats = [
     {
       name: "Active Projects",
       value: "12",
-      icon: BriefcaseIcon,
+      icon: Briefcase,
       color: "bg-blue-500",
     },
     {
       name: "Hired Developers",
       value: "8",
-      icon: UserGroupIcon,
+      icon: Users,
       color: "bg-green-500",
     },
     {
       name: "Completed Jobs",
       value: "24",
-      icon: CheckCircleIcon,
+      icon: CheckCircle,
       color: "bg-[#d97757]",
     },
     {
       name: "Pending Requests",
       value: "5",
-      icon: ClockIcon,
+      icon: Clock,
       color: "bg-yellow-500",
     },
   ];

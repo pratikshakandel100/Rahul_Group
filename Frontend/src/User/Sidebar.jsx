@@ -1,25 +1,25 @@
 import React from 'react';
 import { 
-  HomeIcon, 
-  UserGroupIcon, 
-  BriefcaseIcon, 
-  DocumentTextIcon,
-  UserIcon,
-  CreditCardIcon,
-  BellIcon,
-  PlusCircleIcon,
-  XMarkIcon
-} from '@heroicons/react/24/outline';
+  Home, 
+  Users, 
+  Briefcase, 
+  FileText,
+  User,
+  CreditCard,
+  Bell,
+  PlusCircle,
+  X
+} from 'lucide-react';
 
 const Sidebar = ({ activeTab, setActiveTab, closeSidebar, isMobile }) => {
   const menuItems = [
-    { id: 'dashboard', name: 'Dashboard', icon: HomeIcon },
-    { id: 'hire-developer', name: 'Hire Developer', icon: UserGroupIcon },
-    { id: 'post-job', name: 'Post Job', icon: PlusCircleIcon },
-    { id: 'my-requests', name: 'My Requests', icon: BriefcaseIcon },
-    { id: 'profile', name: 'Profile', icon: UserIcon },
-    { id: 'payments', name: 'Payments', icon: CreditCardIcon },
-    { id: 'notifications', name: 'Notifications', icon: BellIcon },
+    { id: 'dashboard', name: 'Dashboard', icon: Home },
+    { id: 'hire-developer', name: 'Hire Developer', icon: Users },
+    { id: 'post-job', name: 'Post Job', icon: PlusCircle },
+    { id: 'my-requests', name: 'My Requests', icon: Briefcase },
+    { id: 'profile', name: 'Profile', icon: User },
+    { id: 'payments', name: 'Payments', icon: CreditCard },
+    { id: 'notifications', name: 'Notifications', icon: Bell },
   ];
 
   const handleTabClick = (tabId) => {
@@ -42,7 +42,7 @@ const Sidebar = ({ activeTab, setActiveTab, closeSidebar, isMobile }) => {
             onClick={closeSidebar}
             className="p-2 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100"
           >
-            <XMarkIcon className="w-5 h-5" />
+            <X className="w-5 h-5" />
           </button>
         )}
       </div>

@@ -8,36 +8,36 @@ import DeveloperPayments from "./Payments";
 import DeveloperJobs from "./Jobs";
 import DeveloperNotifications from "./Notifications";
 import {
-  FiTrendingUp,
-  FiDollarSign,
-  FiStar,
-  FiBriefcase,
-} from "react-icons/fi";
+  TrendingUp,
+  DollarSign,
+  Star,
+  Briefcase,
+} from "lucide-react";
 
 const DashboardOverview = () => {
   const stats = [
     {
       label: "Total Earnings",
       value: "$12,450",
-      icon: FiDollarSign,
+      icon: DollarSign,
       color: "bg-green-500",
     },
     {
       label: "Active Jobs",
       value: "8",
-      icon: FiBriefcase,
+      icon: Briefcase,
       color: "bg-blue-500",
     },
     {
       label: "Average Rating",
       value: "4.8",
-      icon: FiStar,
+      icon: Star,
       color: "bg-yellow-500",
     },
     {
       label: "Completion Rate",
       value: "95%",
-      icon: FiTrendingUp,
+      icon: TrendingUp,
       color: "bg-[#d97757]",
     },
   ];

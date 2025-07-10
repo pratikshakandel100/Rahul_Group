@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  CreditCardIcon, 
-  BanknotesIcon, 
-  ArrowDownTrayIcon,
-  EyeIcon,
-  PlusIcon,
-  TrashIcon
-} from '@heroicons/react/24/outline';
+  CreditCard, 
+  Banknote, 
+  Download,
+  Eye,
+  Plus,
+  Trash2
+} from 'lucide-react';
 
 const Payments = () => {
   const [activeTab, setActiveTab] = useState('transactions');
@@ -100,7 +100,7 @@ const Payments = () => {
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
             <div className="bg-green-100 p-3 rounded-lg">
-              <BanknotesIcon className="w-6 h-6 text-green-600" />
+              <Banknote className="w-6 h-6 text-green-600" />
             </div>
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">Total Spent</p>
@@ -112,7 +112,7 @@ const Payments = () => {
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
             <div className="bg-blue-100 p-3 rounded-lg">
-              <CreditCardIcon className="w-6 h-6 text-blue-600" />
+              <CreditCard className="w-6 h-6 text-blue-600" />
             </div>
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">This Month</p>
@@ -124,7 +124,7 @@ const Payments = () => {
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
             <div className="bg-[#d97757] bg-opacity-20 p-3 rounded-lg">
-              <ArrowDownTrayIcon className="w-6 h-6 text-[#d97757]" />
+              <Download className="w-6 h-6 text-[#d97757]" />
             </div>
             <div className="ml-4">
               <p className="text-sm font-medium text-gray-600">Pending</p>
@@ -167,7 +167,7 @@ const Payments = () => {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
                 <h3 className="text-lg font-semibold text-gray-900">Recent Transactions</h3>
                 <button className="mt-4 sm:mt-0 flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                  <ArrowDownTrayIcon className="w-4 h-4 mr-2" />
+                  <Download className="w-4 h-4 mr-2" />
                   Export
                 </button>
               </div>
@@ -215,7 +215,7 @@ const Payments = () => {
                         </td>
                         <td className="py-4 px-4">
                           <button className="text-gray-400 hover:text-[#d97757] transition-colors">
-                            <EyeIcon className="w-4 h-4" />
+                            <Eye className="w-4 h-4" />
                           </button>
                         </td>
                       </tr>
@@ -231,7 +231,7 @@ const Payments = () => {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
                 <h3 className="text-lg font-semibold text-gray-900">Payment Methods</h3>
                 <button className="mt-4 sm:mt-0 flex items-center px-4 py-2 bg-[#d97757] text-white rounded-lg hover:bg-orange-600 transition-colors">
-                  <PlusIcon className="w-4 h-4 mr-2" />
+                  <Plus className="w-4 h-4 mr-2" />
                   Add Payment Method
                 </button>
               </div>
@@ -242,7 +242,7 @@ const Payments = () => {
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center">
                         <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-                          <CreditCardIcon className="w-5 h-5 text-gray-600" />
+                          <CreditCard className="w-5 h-5 text-gray-600" />
                         </div>
                         <div className="ml-3">
                           {method.type === 'credit' ? (
@@ -259,7 +259,7 @@ const Payments = () => {
                         </div>
                       </div>
                       <button className="text-gray-400 hover:text-red-500 transition-colors">
-                        <TrashIcon className="w-4 h-4" />
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                     

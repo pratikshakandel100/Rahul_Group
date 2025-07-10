@@ -6,8 +6,8 @@ import DashboardMain from "./User/DashboardMain";
 function App() {
   return (
     <>
-    <DashboardMain></DashboardMain>
-      {/* <DeveloperDashboard /> */}
+    {/* <DashboardMain></DashboardMain> */}
+      <DeveloperDashboard />
 
     </>
   );
