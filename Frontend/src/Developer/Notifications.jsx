@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiBell, FiCheck, FiX, FiTrash2, FiFilter, FiMail, FiDollarSign, FiUser, FiFileText } from 'react-icons/fi';
+import { Bell, Check, X, Trash2, Filter, Mail, DollarSign, User, FileText } from 'lucide-react';
 
 const DeveloperNotifications = () => {
   const [notifications, setNotifications] = useState([
@@ -10,7 +10,7 @@ const DeveloperNotifications = () => {
       message: 'You have received a new job request for "React Native App Development"',
       timestamp: '2024-01-15T10:30:00Z',
       read: false,
-      icon: FiFileText,
+      icon: FileText,
       color: 'bg-blue-500'
     },
     {
@@ -20,7 +20,7 @@ const DeveloperNotifications = () => {
       message: 'Payment of $2,500 has been received for "E-commerce Website" project',
       timestamp: '2024-01-15T09:15:00Z',
       read: false,
-      icon: FiDollarSign,
+      icon: DollarSign,
       color: 'bg-green-500'
     },
     {
@@ -30,7 +30,7 @@ const DeveloperNotifications = () => {
       message: 'TechCorp Inc. sent you a message regarding the project timeline',
       timestamp: '2024-01-14T16:45:00Z',
       read: true,
-      icon: FiMail,
+      icon: Mail,
       color: 'bg-purple-500'
     },
     {
@@ -40,7 +40,7 @@ const DeveloperNotifications = () => {
       message: 'Sarah Johnson left a 5-star review for your work on the mobile app project',
       timestamp: '2024-01-14T14:20:00Z',
       read: true,
-      icon: FiUser,
+      icon: User,
       color: 'bg-yellow-500'
     },
     {
@@ -50,7 +50,7 @@ const DeveloperNotifications = () => {
       message: 'Your proposal for "WordPress Plugin Development" has been accepted',
       timestamp: '2024-01-13T11:00:00Z',
       read: false,
-      icon: FiFileText,
+      icon: FileText,
       color: 'bg-blue-500'
     },
     {
@@ -60,7 +60,7 @@ const DeveloperNotifications = () => {
       message: 'Your withdrawal request of $1,000 has been processed successfully',
       timestamp: '2024-01-12T08:30:00Z',
       read: true,
-      icon: FiDollarSign,
+      icon: DollarSign,
       color: 'bg-green-500'
     }
   ]);
@@ -149,7 +149,7 @@ const DeveloperNotifications = () => {
                 className="p-1 text-gray-400 hover:text-green-600 transition-colors"
                 title="Mark as read"
               >
-                <FiCheck size={16} />
+                <Check size={16} />
               </button>
             )}
             <button
@@ -157,7 +157,7 @@ const DeveloperNotifications = () => {
               className="p-1 text-gray-400 hover:text-red-600 transition-colors"
               title="Delete notification"
             >
-              <FiTrash2 size={16} />
+              <Trash2 size={16} />
             </button>
           </div>
         </div>
@@ -193,7 +193,7 @@ const DeveloperNotifications = () => {
       <div className="mb-6">
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
           <div className="flex items-center space-x-2">
-            <FiFilter size={20} className="text-gray-600" />
+            <Filter size={20} className="text-gray-600" />
             <span className="text-gray-700">Filter:</span>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -230,7 +230,7 @@ const DeveloperNotifications = () => {
 
       {filteredNotifications.length === 0 && (
         <div className="text-center py-12">
-          <FiBell size={48} className="text-gray-400 mx-auto mb-4" />
+          <Bell size={48} className="text-gray-400 mx-auto mb-4" />
           <p className="text-gray-500 text-lg mb-2">No notifications found</p>
           <p className="text-gray-400">
             {filter === 'all' 

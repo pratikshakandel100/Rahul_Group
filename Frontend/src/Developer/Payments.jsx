@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiDollarSign, FiTrendingUp, FiDownload, FiCreditCard, FiCalendar, FiCheck } from 'react-icons/fi';
+import { DollarSign, TrendingUp, Download, CreditCard, Calendar, Check } from 'lucide-react';
 
 const DeveloperPayments = () => {
   const [withdrawalAmount, setWithdrawalAmount] = useState('');
@@ -77,7 +77,7 @@ const DeveloperPayments = () => {
           <p className="text-xl sm:text-2xl font-bold text-gray-800 mt-1">${value.toLocaleString()}</p>
           {trend && (
             <p className="text-sm text-green-600 mt-1">
-              <FiTrendingUp size={14} className="inline mr-1" />
+              <TrendingUp size={14} className="inline mr-1" />
               {trend}
             </p>
           )}
@@ -96,9 +96,9 @@ const DeveloperPayments = () => {
           transaction.type === 'payment' ? 'bg-green-100' : 'bg-blue-100'
         }`}>
           {transaction.type === 'payment' ? (
-            <FiDollarSign size={20} className="text-green-600" />
+            <DollarSign size={20} className="text-green-600" />
           ) : (
-            <FiDownload size={20} className="text-blue-600" />
+            <Download size={20} className="text-blue-600" />
           )}
         </div>
         <div>
@@ -138,25 +138,25 @@ const DeveloperPayments = () => {
         <StatCard
           title="Available Balance"
           value={paymentData.availableBalance}
-          icon={FiDollarSign}
+          icon={DollarSign}
           color="bg-[#d97757]"
         />
         <StatCard
           title="Pending Payments"
           value={paymentData.pendingPayments}
-          icon={FiCreditCard}
+          icon={CreditCard}
           color="bg-yellow-500"
         />
         <StatCard
           title="Total Earnings"
           value={paymentData.totalEarnings}
-          icon={FiTrendingUp}
+          icon={TrendingUp}
           color="bg-green-500"
         />
         <StatCard
           title="This Month"
           value={paymentData.thisMonthEarnings}
-          icon={FiCalendar}
+          icon={Calendar}
           color="bg-blue-500"
           trend="+15% from last month"
         />
@@ -214,7 +214,7 @@ const DeveloperPayments = () => {
                 disabled={!withdrawalAmount || parseFloat(withdrawalAmount) > paymentData.availableBalance}
                 className="px-6 py-2 bg-[#d97757] text-white rounded-lg hover:bg-[#c56647] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
-                <FiCheck size={16} className="mr-2 inline" />
+                <Check size={16} className="mr-2 inline" />
                 Submit Request
               </button>
             </div>

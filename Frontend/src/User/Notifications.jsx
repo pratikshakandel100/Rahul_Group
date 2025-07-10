@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { 
-  BellIcon, 
-  CheckIcon, 
-  XMarkIcon,
-  UserIcon,
-  BriefcaseIcon,
-  CurrencyDollarIcon,
-  ExclamationTriangleIcon
-} from '@heroicons/react/24/outline';
+  Bell, 
+  Check, 
+  X,
+  User,
+  Briefcase,
+  DollarSign,
+  AlertTriangle
+} from 'lucide-react';
 
 const Notifications = () => {
   const [filter, setFilter] = useState('all');
@@ -19,7 +19,7 @@ const Notifications = () => {
       message: 'Alice Johnson applied for your React Developer position',
       time: '2 hours ago',
       read: false,
-      icon: UserIcon,
+      icon: User,
       color: 'bg-blue-100 text-blue-600'
     },
     {
@@ -29,7 +29,7 @@ const Notifications = () => {
       message: 'Payment of $2,250 to Bob Wilson has been processed successfully',
       time: '4 hours ago',
       read: false,
-      icon: CurrencyDollarIcon,
+      icon: DollarSign,
       color: 'bg-green-100 text-green-600'
     },
     {
@@ -39,7 +39,7 @@ const Notifications = () => {
       message: 'Carol Davis marked "E-commerce Website" as completed',
       time: '1 day ago',
       read: true,
-      icon: BriefcaseIcon,
+      icon: Briefcase,
       color: 'bg-[#d97757] bg-opacity-20 text-[#d97757]'
     },
     {
@@ -49,7 +49,7 @@ const Notifications = () => {
       message: 'Payment to David Brown failed. Please update your payment method',
       time: '2 days ago',
       read: false,
-      icon: ExclamationTriangleIcon,
+      icon: AlertTriangle,
       color: 'bg-red-100 text-red-600'
     },
     {
@@ -59,7 +59,7 @@ const Notifications = () => {
       message: 'Emma Wilson withdrew her application for Mobile App Developer',
       time: '3 days ago',
       read: true,
-      icon: UserIcon,
+      icon: User,
       color: 'bg-blue-100 text-blue-600'
     },
     {
@@ -69,7 +69,7 @@ const Notifications = () => {
       message: 'Frank Miller sent you a message about the Dashboard project',
       time: '3 days ago',
       read: true,
-      icon: BriefcaseIcon,
+      icon: Briefcase,
       color: 'bg-[#d97757] bg-opacity-20 text-[#d97757]'
     }
   ]);
@@ -115,7 +115,7 @@ const Notifications = () => {
             onClick={markAllAsRead}
             className="mt-4 sm:mt-0 flex items-center px-4 py-2 bg-[#d97757] text-white rounded-lg hover:bg-orange-600 transition-colors"
           >
-            <CheckIcon className="w-4 h-4 mr-2" />
+            <Check className="w-4 h-4 mr-2" />
             Mark All as Read
           </button>
         )}
@@ -161,7 +161,7 @@ const Notifications = () => {
       <div className="bg-white rounded-lg shadow">
         {filteredNotifications.length === 0 ? (
           <div className="p-12 text-center">
-            <BellIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+            <Bell className="w-12 h-12 text-gray-400 mx-auto mb-4" />
             <p className="text-gray-500 text-lg">No notifications found</p>
             <p className="text-gray-400 text-sm mt-2">
               {filter === 'unread' ? 'All notifications have been read' : 'Check back later for updates'}
@@ -206,7 +206,7 @@ const Notifications = () => {
                               className="text-gray-400 hover:text-[#d97757] transition-colors"
                               title="Mark as read"
                             >
-                              <CheckIcon className="w-4 h-4" />
+                              <Check className="w-4 h-4" />
                             </button>
                           )}
                           <button
@@ -214,7 +214,7 @@ const Notifications = () => {
                             className="text-gray-400 hover:text-red-500 transition-colors"
                             title="Delete notification"
                           >
-                            <XMarkIcon className="w-4 h-4" />
+                            <X className="w-4 h-4" />
                           </button>
                         </div>
                       </div>

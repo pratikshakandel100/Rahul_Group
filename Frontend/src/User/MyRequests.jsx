@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EyeIcon, ChatBubbleLeftIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { Eye, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
 
 const MyRequests = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -59,8 +59,8 @@ const MyRequests = () => {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'completed': return <CheckCircleIcon className="w-4 h-4" />;
-      case 'cancelled': return <XCircleIcon className="w-4 h-4" />;
+      case 'completed': return <CheckCircle className="w-4 h-4" />;
+      case 'cancelled': return <XCircle className="w-4 h-4" />;
       default: return null;
     }
   };
@@ -128,7 +128,17 @@ const MyRequests = () => {
               </div>
             </div>
 
-           
+            {/* Action buttons section - you can add these if needed */}
+            <div className="flex gap-2 mt-4">
+              <button className="flex items-center px-3 py-1.5 text-sm text-gray-600 hover:text-[#d97757] transition-colors">
+                <Eye className="w-4 h-4 mr-1" />
+                View
+              </button>
+              <button className="flex items-center px-3 py-1.5 text-sm text-gray-600 hover:text-[#d97757] transition-colors">
+                <MessageCircle className="w-4 h-4 mr-1" />
+                Messages
+              </button>
+            </div>
           </div>
         ))}
       </div>

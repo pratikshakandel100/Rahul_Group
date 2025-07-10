@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
-  BellIcon, 
-  UserIcon, 
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  Cog6ToothIcon,
-  ArrowRightOnRectangleIcon,
-  ChevronDownIcon
-} from '@heroicons/react/24/outline';
+  Bell, 
+  User, 
+  Menu,
+  Search,
+  Settings,
+  LogOut,
+  ChevronDown
+} from 'lucide-react';
 
 const Header = ({ toggleSidebar, activeTab, sidebarOpen, isMobile }) => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -76,7 +76,7 @@ const Header = ({ toggleSidebar, activeTab, sidebarOpen, isMobile }) => {
             `}
             aria-label="Toggle sidebar"
           >
-            <Bars3Icon className="w-6 h-6" />
+            <Menu className="w-6 h-6" />
           </button>
           
           {/* Logo and Title */}
@@ -99,7 +99,7 @@ const Header = ({ toggleSidebar, activeTab, sidebarOpen, isMobile }) => {
             <div className="hidden md:flex flex-1 max-w-md ml-8">
               <form onSubmit={handleSearch} className="w-full">
                 <div className="relative">
-                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
                     type="text"
                     placeholder="Search developers, projects..."
@@ -121,7 +121,7 @@ const Header = ({ toggleSidebar, activeTab, sidebarOpen, isMobile }) => {
               onClick={() => setShowNotifications(!showNotifications)}
               className="relative p-2 text-gray-600 hover:text-[#d97757] hover:bg-gray-100 rounded-full transition-colors duration-200"
             >
-              <BellIcon className="w-6 h-6" />
+              <Bell className="w-6 h-6" />
               {unreadCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
                   {unreadCount}
@@ -159,13 +159,13 @@ const Header = ({ toggleSidebar, activeTab, sidebarOpen, isMobile }) => {
               className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
             >
               <div className="w-8 h-8 bg-[#d97757] rounded-full flex items-center justify-center">
-                <UserIcon className="w-5 h-5 text-white" />
+                <User className="w-5 h-5 text-white" />
               </div>
               <div className="hidden md:block text-left">
                 <span className="text-gray-700 font-medium text-sm">John Doe</span>
                 <p className="text-xs text-gray-500">Administrator</p>
               </div>
-              <ChevronDownIcon className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+              <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
                 showProfileMenu ? 'rotate-180' : ''
               }`} />
             </button>
@@ -173,18 +173,20 @@ const Header = ({ toggleSidebar, activeTab, sidebarOpen, isMobile }) => {
             {/* Profile Dropdown */}
             {showProfileMenu && (
               <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-              
-                
                 <button className="w-full flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
-                  <UserIcon className="w-4 h-4 mr-3" />
+                  <User className="w-4 h-4 mr-3" />
                   Profile Settings
                 </button>
                 
+                <button className="w-full flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
+                  <Settings className="w-4 h-4 mr-3" />
+                  Account Settings
+                </button>
                 
                 <hr className="my-2" />
                 
                 <button className="w-full flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors">
-                  <ArrowRightOnRectangleIcon className="w-4 h-4 mr-3" />
+                  <LogOut className="w-4 h-4 mr-3" />
                   Sign Out
                 </button>
               </div>
