@@ -52,7 +52,7 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => (
           return (
             <NavLink
               key={item.id}
-              to={`/user/${item.id}`}
+              to={`/developer/${item.id}`}
               className={({ isActive }) =>
                 `w-full flex items-center px-4 py-3 text-left transition-colors duration-200 ${
                   isActive
